@@ -3,7 +3,7 @@
 ##################################################
 
 Created by Andrea Berbellini, November 2018
-For questions, bugs, comments please email me: andrea.berbellini@ingv.it 
+For questions, bugs, comments please email me: andrea.berbellini@ingv.it
 
 
 Prerequisites
@@ -31,14 +31,14 @@ executable will be create in the bin/ folder
 
 Data
 --------------------------------------------------------------------
-We provide data from January, 2009 from station CCD (Concordia, Antarctica) to reproduce the published 
+We provide data from January, 2009 from station CCD (Concordia, Antarctica) to reproduce the published
 results. Data are free to donwload from ORFEUS data center. They are provided by GEOSCOPE:
 
 Institut De Physique Du Globe De Paris (IPGP); Ecole Et Observatoire Des Sciences De La Terre De Strasbourg (EOST).
-(1982). GEOSCOPE, French Global Network of broad band seismic stations. Institut de Physique du Globe de Paris (IPGP). 
+(1982). GEOSCOPE, French Global Network of broad band seismic stations. Institut de Physique du Globe de Paris (IPGP).
 https://doi.org/10.18715/geoscope.g
 
-The code works with chunks of 8162 samples. We provide data ready-to-use, corrected for the
+The code works with chunks of 8162 samples (8192???). We provide data ready-to-use, corrected for the
 instrument response.
 
 
@@ -47,15 +47,15 @@ Run a demo measurement
 To run the DOP-E measurement routine type:
 > python start.py
 
-This Python routine calls resursively the bash script run_DOP-E.cmd that calls the executable bin/DOP-E_v1.0. 
+This Python routine calls resursively the bash script run_DOP-E.cmd that calls the executable bin/DOP-E_v1.0.
 The parameters for DOP-E are defined in run_DOP-E.cmd. By default we keep the same parameters used in our paper
 (See table 1, supplementary material).
 
-The program will start computing the DOP-E analysis on the data from CCD station, day by day. It will take a couple of hours, 
+The program will start computing the DOP-E analysis on the data from CCD station, day by day. It will take a couple of hours,
 depending on the machine computational power.
 After the end of the measurement stage, results for each day will be stored in files in CCD_data/1.2009/<day>/<day>.1.2009.demo.asc
 The file contains 7 columns:
-back azimuth | frequency | degree of polarization | begin time of the sample | not used variable | H/V ratio | not used variable 
+back azimuth | frequency | degree of polarization | begin time of the sample | not used variable | H/V ratio | not used variable
 
 
 Plotting results
@@ -64,7 +64,7 @@ After the measurement plot the results using the routine provided. Type:
 > python plot_results.py
 
 This routine merges all the results for each day into a single file, reads the results, compute the median and plot the
-ellipticity curve. It also plots the ellipticity values measured from earthquake data using the method by 
+ellipticity curve. It also plots the ellipticity values measured from earthquake data using the method by
 Berbellini et al. (2016). It also compare the results with the theoretical ellipticity curve measured using the method
 by Herrmann (2013) from the model Litho1.0 and Crust1.0 (Laske, 2013)
 
@@ -76,17 +76,17 @@ This software is free to download. If used please cite:
         Berbellini, A., Schimmel, M., Ferreira, A.M.G., Morelli, A., Constraining S-wave velocity
         using Rayleigh wave ellipticity from polarization analysis of seismic noise, Geophysical
         Journal International, Volume 216, Issue 3, March 2019, Pages 1817–1830, https://doi.org/10.1093/gji/ggy512
-	
+
 The DOP-E method is an update of the method implemented by Martin Schimmel:
-	   
+
         Schimmel, M. & Gallart, J., 2004. Degree of polarization filter for frequency-dependent
 	    signal enhancement through noise suppression, Bull. Seismol. Soc. Am., 94(3), 1016–1035.
-	
-	    Schimmel, M., Stutzmann, E., Ardhuin, F., & Gallart, J., 2011. Polarized Earth’s ambient 
+
+	    Schimmel, M., Stutzmann, E., Ardhuin, F., & Gallart, J., 2011. Polarized Earth’s ambient
 	    microseismic noise, Geochemistry, Geophys. Geosystems, 12(7), 1–14.
 
 Other references
--------------------------------------------------------------------    
+-------------------------------------------------------------------
         Berbellini, A., Morelli, A., & Ferreira, A. M., 2016. Ellipticity of Rayleigh waves in basin and
         hard-rock sites in Northern Italy, Geophysical Journal International, 206(1), 395–407.
 
@@ -96,13 +96,6 @@ Other references
         Laske, G., Masters, G., Ma, Z., & Pasyanos, M., 2013. Update on CRUST1.0 - A 1-degree Global
         Model of Earth’s Crust, Geophys. Res. Abstr., 15, EGU General Assembly 2013, held 7-12 April,
         2013 in Vienna, Austria, id. EGU2013-2658.
-
-
-
-
-
-
-
 
 
 
